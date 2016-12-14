@@ -1,0 +1,10 @@
+<div id="articles"  ng-controller="articlesCtrl" style="height: 500px; width: 100%; background-color: white; white-space: nowrap; overflow-x: scroll; ">
+
+	<div ng-repeat="article in articles" style="display: inline-block;" ng-click="article.url">
+		<h3 style="text-align: center;">{{ article.name }} </h3>
+		<div class="subjects" style="height: 300px; width: 300px; border: 1px solid black; margin-left: 5px; margin-right: 5px; color: black; font-size: 14pt;  " >
+			<img style="height: 295px; width: 295px;" ng-src="{{article.img}}">
+
+		</div>
+	</div>	
+</div>

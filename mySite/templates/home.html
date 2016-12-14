@@ -1,0 +1,41 @@
+
+<div id="home">
+
+	<div class="banner" style="background-color: black;">
+		<img src="img/bannerJean.png" class="img-responsive">
+		
+	</div>	
+
+	<div class="navigation  rotate row">
+		<div class="col col-md-3 col-md-offset-1 employeed-where" ng-click="changeSubView('employeed')"  >Who's Scott?<img src="img/dummyWhite.png"></div>	
+
+		<div class="col col-md-3 col-md-offset-1 rotate spacer portfolio" ng-click="openModal('templates/home/modal-templates/resume-modal.html', 'modalResumeCtrl')"><b >Portfolio</b> <img src="img/briefCase.png"> </div>
+
+		<div style="overflow: hidden;" class="col col-md-3 col-md-offset-1 rotate spacer articles" ng-click="changeSubView('articles')" >Articles <img style="height: 215px;" src="img/articlePaper.png"></div>
+		
+
+	</div>
+	<div>
+
+		<h1 > {{ currentSubView }}</h1>
+		<hr class="featurette-divider">
+
+	</div>	
+	<div class="view-exchange animate-switch-container" ng-switch on="navSelect">
+
+		<div  class="animate-switch"  ng-switch-when="employeed" >
+			<div ng-include="'templates/home/employeed.html'"></div>
+		</div>	
+		<div  class="animate-switch" ng-switch-when="articles">
+			<div  ng-include="'templates/home/articles.html'"></div>
+		 </div>
+		<div  class="animate-switch" ng-switch-default> <h1> A<h1> </div>
+
+	</div>
+
+
+	<button class="btn btn-danger contact-button" ng-click="openModal('templates/contact.html', 'contactCtrl')" >Contact ScottJs</button>
+	<hr style="padding-top: 20px;" class="featurette-divider">
+
+	<div ng-include="'templates/footer.html'"></div>	
+</div>

@@ -1,0 +1,53 @@
+<div id="resume-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      <div class="modal-header">
+        <figure>
+          <h3>Currently Working at: Xymmetrix LLC <br> in: Fort Wayne, In</h3>        
+          <figcaption>&#10033; Click on the row to see the Project</figcaption>
+        </figure>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>
+              Buisness/Organization
+            </th>
+            <th>
+              Year
+            </th>
+            <th>
+              Tech
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr  ng-repeat="project in history | orderBy: 'year': true" ng-click="goToSite(project)">
+              <td>
+                {{ project.name }} 
+                  <div ng-show="noLonger== project.name" class="custom-alert">
+                    <strong>Apologies!</strong> This link is no longer active
+                    <button type="button" class="close" ng-click="noLonger=''" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+              </td>
+              <td>
+                {{ project.year }}
+              </td>
+              <td>
+                <p ng-repeat="tool in project.tech"> {{ tool }} </p>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="showResume(user)" class="btn btn-primary btn-block">See Resume</button>
+        <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" >Exit</button>
+      </div>
+    </div>
+  </div>
+</div>
