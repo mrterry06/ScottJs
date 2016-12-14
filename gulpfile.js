@@ -55,7 +55,7 @@ var smtpConfig = {
 	secure: true,
 	auth: {
 		user: 'mrterry06@gmail.com',
-		pass: 'Elfin123'
+		pass: ''
 	}
 };
 
